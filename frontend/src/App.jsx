@@ -77,24 +77,12 @@ function App() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
   return (
-    <>
-      <div>
-        Sangvu - TodoList
-      </div>
+  <div className="app">
 
+    <h1>Sangvu - TodoList</h1>
+
+    <div className="input-group">
       <input
         type='text'
         value={input}
@@ -103,18 +91,24 @@ function App() {
       />
 
       <button onClick={addTodo}>Add</button>
+    </div>
 
-
+    <div className="todo-list">
       {
         todos.map((todo) => (
-          <div key={todo._id}>
+          <div className="todo-item" key={todo._id}>
             <p>{todo.text}</p>
-            <button onClick={() => deleteTask(todo._id)}>DELETE</button>
+
+            <button onClick={() => deleteTask(todo._id)}>
+              DELETE
+            </button>
           </div>
         ))
       }
-    </>
-  )
+    </div>
+
+  </div>
+)
 }
 
 export default App
